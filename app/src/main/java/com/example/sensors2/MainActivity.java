@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
     private List<Sensor> llistaSensors;
-    private TextView aTextView[][] = new TextView[20][6];
+    private TextView aTextView[][] = new TextView[100][30];
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             mTextView.setText(sensor.getName());
             raiz.addView(mTextView);
             LinearLayout nLinearLayout = new LinearLayout(this);
-
-            25
-
             raiz.addView(nLinearLayout);
             for (int i = 0; i < 6; i++) {
                 aTextView[n][i] = new TextView(this);
@@ -54,8 +51,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             n++;
         }
     }
-    @Override public void onAccuracyChanged(Sensor sensor, int
-            accuracy) {}
+    @Override public void onAccuracyChanged(Sensor sensor, int accuracy) {}
 
     @Override public void onSensorChanged(SensorEvent event) {
         synchronized (this) {
