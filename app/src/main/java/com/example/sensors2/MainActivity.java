@@ -19,9 +19,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LinearLayout raiz = (LinearLayout)findViewById(R.id.arrel);
-        SensorManager sm = (SensorManager)
-                getSystemService(SENSOR_SERVICE);
-        llistaSensors = sm.getSensorList(Sensor.TYPE_ALL);
+        SensorManager sm = (SensorManager)getSystemService(SENSOR_SERVICE);
+        llistaSensors = sm.getSensorList(Sensor.TYPE_ACCELEROMETER);
         int n = 0;
         for (Sensor sensor : llistaSensors) {
             TextView mTextView = new TextView(this);
